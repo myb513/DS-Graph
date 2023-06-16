@@ -11,13 +11,13 @@ $(TARGET): $(OBJS)
 main.o: main.c
 	$(CC) $(CFLAGS) -c main.c
 
-calc.o: graph.c
+graph.o: graph.c
 	$(CC) $(CFLAGS) -c graph.c
 
-stack.o: dfs.c
+dfs.o: dfs.c
 	$(CC) $(CFLAGS) -c dfs.c
 
-queue.o: bfs.c
+bfs.o: bfs.c
 	$(CC) $(CFLAGS) -c bfs.c
 
 run: $(TARGET)
