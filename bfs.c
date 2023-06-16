@@ -1,7 +1,10 @@
-#include "bfs.h"
 #include "graph.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+int cmpbfs(const void* a, const void* b) {
+    return (*(int*)a) - (*(int*)b);
+}
 
 void bfs(Node** graph, int v, int* visited, int N) {
     int front = 0;
@@ -22,7 +25,7 @@ void bfs(Node** graph, int v, int* visited, int N) {
             adj[adjCount++] = curr->vertex;
             curr = curr->next;
         }
-        qsort(adj, adjCount, sizeof(int), cmp);
+        qsort(adj, adjCount, sizeof(int), cmpbfs);
 
         for (int i = 0; i < adjCount; i++) {
             int nextVertex = adj[i];
